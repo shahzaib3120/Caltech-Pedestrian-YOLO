@@ -25,7 +25,7 @@ def imageGenerator():
     """
     logger('Image generator started!')
     # Checking the input directory if contains .seq files
-    seqFiles = sorted(glob(f'{caltechDataDir}/*/*.seq'))
+    seqFiles = sorted(glob(f'{caltechDataDir}/**/*.seq', recursive=True))
     if not seqFiles:
         logger(f'{caltechDataDir} contains no ".seq" files!', logLevel='error')
         return

@@ -37,7 +37,7 @@ def annotationGenerator():
         'test': open(f'{genLabelsDir}/test.txt', 'w')
     }
     # Checking the input directory if contains .vbb files
-    vbbFiles = sorted(glob(f'{caltechLabelsDir}/*/*.vbb'))
+    vbbFiles = sorted(glob(f'{caltechLabelsDir}/**/*.vbb', recursive=True))
     if not vbbFiles:
         logger(f'{caltechLabelsDir} contains no ".vbb" files!', logLevel='error')
         return
